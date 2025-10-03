@@ -720,46 +720,25 @@
                 }
                 
                 /* עיצוב רספונסיבי לטופס ייעוץ פנסיוני */
-                #consultationFormModal {
-                    padding: 10px !important;
-                }
-                
                 #consultationFormModal > div {
                     padding: 20px !important;
                     max-width: 95% !important;
-                    margin: 10px !important;
-                    width: calc(100% - 20px) !important;
-                    box-sizing: border-box !important;
+                    margin: 20px !important;
                 }
                 
                 #consultationFormModal h3 {
                     font-size: 1.4rem !important;
-                    margin-bottom: 15px !important;
-                }
-                
-                #consultationFormModal p {
-                    font-size: 0.9rem !important;
-                    margin-bottom: 20px !important;
                 }
                 
                 #consultationFormModal input,
                 #consultationFormModal textarea {
                     font-size: 0.9rem !important;
-                    padding: 12px !important;
-                    width: 100% !important;
-                    box-sizing: border-box !important;
+                    padding: 10px !important;
                 }
                 
                 #consultationFormModal button {
                     padding: 12px 20px !important;
                     font-size: 0.9rem !important;
-                    width: 100% !important;
-                    margin: 5px 0 !important;
-                }
-                
-                #consultationFormModal .form-buttons {
-                    flex-direction: column !important;
-                    gap: 10px !important;
                 }
                  
                  /* עיצוב רספונסיבי ל-file-upload-section */
@@ -1228,31 +1207,18 @@
                 align-items: center !important;
                 gap: 0.5rem !important;
                 margin-bottom: 2rem !important;
-                width: 100% !important;
-                padding: 0 10px !important;
             }
             
             .tab-button {
-                width: 100% !important;
-                max-width: none !important;
-                margin: 0 !important;
+                width: 90% !important;
+                max-width: 300px !important;
+                margin: 0 auto !important;
                 padding: 15px 20px !important;
                 font-size: 0.9rem !important;
-                box-sizing: border-box !important;
             }
             
             .analysis-content {
                 padding: 0 1rem !important;
-            }
-            
-            .tab-content {
-                padding: 1rem !important;
-                margin: 0 10px !important;
-            }
-            
-            .analysis-grid {
-                grid-template-columns: 1fr !important;
-                gap: 1rem !important;
             }
             
             .analysis-content h3 {
@@ -1668,28 +1634,6 @@
                 font-size: 1.5rem;
             }
             
-            /* שיפורים נוספים לטופס ייעוץ במובייל קטן */
-            #consultationFormModal > div {
-                padding: 15px !important;
-                margin: 5px !important;
-                width: calc(100% - 10px) !important;
-            }
-            
-            #consultationFormModal h3 {
-                font-size: 1.2rem !important;
-            }
-            
-            #consultationFormModal .form-buttons {
-                flex-direction: column !important;
-                gap: 10px !important;
-            }
-            
-            #consultationFormModal button {
-                width: 100% !important;
-                padding: 15px !important;
-                font-size: 0.9rem !important;
-            }
-            
             .file-upload-area {
                 padding: 2rem 1rem;
             }
@@ -1738,30 +1682,31 @@
     </header>
 
 
-    <div class="mainTitle" dir="rtl">
-        <div class="feature-card">
-            <div dir="rtl">
-                <h1  class="feature-title hatid">העתיד הפיננסי שלך מתחיל כאן!</h1>
-                <h1 class="feature-description"> אנחנו משנים את הדרך שבה 
-                    אתה חוסך, משקיע ומשווה בין 			
-                    מסלולים פנסיוניים – בעזרת כלים דיגיטליים חכמים,
-                    נתונים בזמן אמת וניתוחים מתקדמים. כל מה שמעדיפים שלא תדע 
-                        – עכשיו שקוף, פשוט ונגיש.</h1>
+<div class="mainTitle" dir="rtl">
+	<div class="feature-card">
+		<div dir="rtl">
+			<h1  class="feature-title hatid">העתיד הפיננסי שלך מתחיל כאן!</h1>
+			<h1 class="feature-description"> אנחנו משנים את הדרך שבה 
+				אתה חוסך, משקיע ומשווה בין 			
+				מסלולים פנסיוניים – בעזרת כלים דיגיטליים חכמים,
+				נתונים בזמן אמת וניתוחים מתקדמים. כל מה שמעדיפים שלא תדע 
+				    – עכשיו שקוף, פשוט ונגיש.</h1>
                 <a href="#fileUpload" class="cta-button bigscreen" style="margin-left: auto;margin-right: auto;"
-                onclick="document.getElementById('fileUpload').style.display = 'flex';">בוא נתחיל בתהליך - חינם</a>
+                onclick="letStart()">בוא נתחיל בתהליך - חינם</a>
             <div style="font-size: 20px;text-align: right;color: #666;">נדרש להעלות קובצי xml של המסלקה הפנסיונית</div>
-            </div> 
-            <img class="hero-icon" src="savemoney.png" alt="Graph Icon" style="width: 300px; height: 300px;"/>           
+		</div> 
+		<img class="hero-icon" src="savemoney.png" alt="Graph Icon" style="width: 300px; height: 300px;"/>           
             <a href="#fileUpload" class="cta-button smallscreen" style="margin-left: auto;margin-right: auto;"
                 onclick="document.getElementById('fileUpload').style.display = 'flex';">בוא נתחיל בתהליך - חינם</a>
-        </div>	
-    </div>
+	</div>	
+</div>
     <!-- File Upload Section -->
     <section class="file-upload-section" id="fileUpload">
         <div class="container">
-            <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <div id='sectionHeader' class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
                 <h2 class="section-title" dir="rtl">העלאת קבצי XML מהמסלקה הפנסיונית</h2>
-                <button class="close-section-btn" id="closeFileUploadSection" style="background: #dc3545; color: white; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" title="סגור">
+                <button class="close-section-btn" id="closeFileUploadSection" style="background: #dc3545; color: white;
+                 border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;" title="סגור">
                     ×
                 </button>
             </div>
@@ -1775,11 +1720,11 @@
                     <p dir="rtl">העלה את קבצי המסלקה מסוג XML</p>
                     <input type="file" id="fileInput" multiple accept=".xml" style="display: none;">
                     <button class="cta-button" id="selectFilesBtn" dir="rtl">בחר קבצי XML</button>
-                </div>
+</div>
                 <div class="uploaded-files" id="uploadedFiles" style="display: none;">
                     <div class="file-actions">
                         <button class="cta-button" id="processFiles">קרא נתונים</button>
-                        <button class="cta-button delete-btn" id="deleteFiles">מחק קבצים</button>
+                        <button onclick="closeDataDisplay()" class="cta-button delete-btn" id="deleteFiles">מחק קבצים</button>
                     </div>
                     <h3 dir="rtl" id="uploadedFilesTitle">קבצים שהועלו:</h3>
                     <div class="files-list" id="filesList"></div>  
@@ -1925,7 +1870,7 @@
                     <textarea id="message" rows="4" style="width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 10px; font-size: 1rem; transition: border-color 0.3s ease; resize: vertical;" placeholder="ספר לנו על הצרכים הפנסיוניים שלך..."></textarea>
                 </div>
                 
-                <div class="form-buttons" style="display: flex; gap: 15px; justify-content: center;">
+                <div style="display: flex; gap: 15px; justify-content: center;">
                     <button type="submit" style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; border: none; padding: 15px 30px; border-radius: 25px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease; flex: 1;">
                         📤 שלח בקשה
                     </button>
@@ -1937,7 +1882,7 @@
         </div>
     </div>
 
-    <!-- Advanced Analysis Section -->
+   <!-- Advanced Analysis Section -->
    <section class="advanced-analysis-section" id="advancedAnalysis" style="display: none;">
     <div class="container">
         <h2 class="section-title" dir="rtl">ניתוח נתונים מתקדם</h2>
@@ -2084,7 +2029,7 @@
 
     <section class="features" id="services">
         <div class="container">
-            <h2 class="section-title">?למה לבחור בנו</h2>
+            <h2 class="section-title">למה לבחור בנו?</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon"><img src="advicing.png" width="120" height="auto"/></div>
@@ -2173,7 +2118,13 @@
 
     </div>
 
-    <script>
+<script>
+
+        function letStart(){
+            document.getElementById('fileUpload').style.display = 'flex';
+            document.getElementById('fileUploadArea').style.display = 'block';
+            document.getElementById('sectionHeader').style.display = 'flex';    
+        }
         // וידוא שהדף תמיד מתחיל בחלק העליון
         window.addEventListener('load', function() {
             window.scrollTo(0, 0);
@@ -2408,9 +2359,9 @@
             fileUploadArea.style.display = 'none';
             filesList.innerHTML = '';
             let gemelFiles =0;let pensiaHfiles =0;let pensiaVfiles =0;let bituachfiles=0;
-            const fileItem = document.createElement('div');
+                const fileItem = document.createElement('div');
             const fileIcon = getFileIcon(uploadedFiles[0].type);
-            fileItem.className = 'file-item';
+                fileItem.className = 'file-item';
             uploadedFiles.forEach((file, index) => {
                 if(file.name.includes('KGM')){gemelFiles++;}
                 if(file.name.includes('PNN')){pensiaHfiles++;}
@@ -2427,7 +2378,7 @@
             if (bituachfiles > 0) parts.push(`${bituachfiles} קבצי ביטוח`);
 
             const fileSentence = "הועלו " + parts.join(", ");
-            fileItem.innerHTML = `
+                fileItem.innerHTML = `
                     <div dir="rtl" class="file-info" style="text-align: right;">
                         <i class="file-icon ${fileIcon}"></i>
                         <div style="display:flex;justify-content:right;">
@@ -2435,7 +2386,7 @@
                         </div>
                     </div>
                 `;
-            filesList.appendChild(fileItem);
+                filesList.appendChild(fileItem);
 
         }
 
@@ -3483,7 +3434,7 @@
 
         // Delete files button
         deleteFilesBtn.addEventListener('click', () => {
-            if (confirm('האם אתה בטוח שברצונך למחוק את כל הקבצים?')) {
+            /*if (confirm('האם אתה בטוח שברצונך למחוק את כל הקבצים?')) {
                 uploadedFiles = [];
                 fileInput.value = '';
                 uploadedFilesDiv.style.display = 'none';
@@ -3496,7 +3447,9 @@
                     myChart = null;
                 }
                 console.log('נתוני המסלקה נוקו:', dataMislaka);
-            }
+            }*/
+            closeDataDisplay();
+            document.getElementById('sectionHeader').style.display = 'none';
         });
 
         // Close chart button
@@ -3516,7 +3469,6 @@
                 uploadedFilesDiv.style.display = 'none';
                 fileDataDisplay.style.display = 'none';
                 document.getElementById('chartContainer').style.display = 'none';
-                fileUploadArea.style.display = 'none';
                 dataMislaka = null; // Clear data variable
                 if (myChart) {
                     myChart.destroy();
@@ -3536,8 +3488,7 @@
                                      (document.getElementById('chartContainer').style.display === 'block' || document.getElementById('chartContainer').style.display === 'flex');
                 
                 if (isProcessActive) {
-                    alert('יש תהליך פעיל. אנא סגור את התהליך הנוכחי לפני התחלת תהליך חדש.');
-                    return;
+                    closeDataDisplay();
                 }
                 
                 const fileUploadSection = document.getElementById('fileUpload');
@@ -3580,18 +3531,67 @@
 
         // Close file upload section button
         closeFileUploadSectionBtn.addEventListener('click', () => {
+            console.log('כפתור סגירה נלחץ');
+            closeDataDisplay();
+        });
+        function closeDataDisplay(){ 
+            console.log('closeDataDisplay נקרא');
             if (confirm('האם אתה בטוח שברצונך לסגור את סקציית העלאת הקבצים? כל הנתונים יימחקו.')) {
                 // Clear all data
                 uploadedFiles = [];
                 fileInput.value = '';
-                sumSugMutzar = null;
-                
+                sumSugMutzar = sumSugMutzar = {
+                    '1': [0, 0,0,0,0], '2': [0, 0,0,0,0], '2_1': [0, 0,0,0,0], '2_2': [0, 0,0,0,0], '3': [0, 0,0,0,0],
+                    '4': [0, 0,0,0,0], '5': [0, 0,0,0,0], '6': [0, 0,0,0,0], '7': [0, 0,0,0,0], '8': [0, 0,0,0,0],
+                    '9': [0, 0,0,0,0], '10': [0, 0,0,0,0]
+                };
+                pirteiHeshbon=[];DataAll=[];kodMaslulSet=new Set();yitrotKaspeyPizoyim=[];
+                pratimIshim='';yitrotLefiMutzar='';yitrotLeGilPrisha='';
+                masluleiHashkaa=[];sheabudIkulHalvaa=[];
+                dataMislaka = null;myChart = null;
+                document.getElementById('sectionHeader').style.display = 'none';
+                document.getElementById('dataDisplayContainer').innerHTML= `
+                    <div style="text-align: right; margin-bottom: 30px;">
+                        <h2 style="color: white; font-size: 2.5rem; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">📊 סיכום הנתונים שלך</h2>
+                        <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem;">כל המידע החשוב במקום אחד</p>
+                    </div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                        <!-- פרטים אישיים -->
+                        <div style="background: rgba(255,255,255,0.95); padding: 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                            <h3 style="color: #333; margin-bottom: 20px; font-size: 1.5rem; border-bottom: 3px solid #667eea; padding-bottom: 10px;">👤 פרטים אישיים</h3>
+                            <div id="personalInfo" dir="rtl" style="color: #555; line-height: 1.8;">
+                                <!-- כאן יוצגו הפרטים האישיים -->
+                            </div>
+                        </div>
+                        
+                        <!-- גרף עוגה -->
+                        <div dir="rtl" style="background: rgba(255,255,255,0.95); padding: 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                             <h3 style="color: #333; white-space: nowrap; margin-bottom: 20px; font-size: 1.5rem; border-bottom: 3px solid #667eea; padding-bottom: 10px; text-align:center;">🥧 חלוקת הצבירה לפי מוצרים</h3>
+                            <canvas id="pieChart" style="max-height: 300px;"></canvas>
+                        </div>
+                    </div>
+                    
+                    <!-- טבלת סיכום מפורטת -->
+                    <div dir="rtl" style="background: rgba(255,255,255,0.95); padding: 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                        <h3 style="color: #333; margin-bottom: 20px; font-size: 1.5rem; border-bottom: 3px solid #667eea; padding-bottom: 10px;">📋 סיכום מפורט לפי מוצרים</h3>
+                        <div dir="rtl" id="detailedSummary" style="overflow-x: auto;">
+                            <!-- כאן תוצג הטבלה המפורטת -->
+                        </div>
+                    </div>
+                    
+                    <div style="text-align: right; margin-top: 30px;">
+                        <button onclick="closeDataDisplay()" style="background: linear-gradient(45deg, #ff6b6b, #ee5a24); color: white; border: none; padding: 15px 30px; border-radius: 25px; font-size: 1.1rem; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: all 0.3s ease;">
+                            ✨ סגור תצוגה
+                        </button>
+                    </div>
+                `
                 // Hide all containers
                 document.getElementById('uploadedFiles').style.display = 'none';
                 document.getElementById('fileDataDisplay').style.display = 'none';
                 document.getElementById('chartContainer').style.display = 'none';
                 document.getElementById('advancedAnalysis').style.display = 'none';
-                document.getElementById('fileUploadArea').style.display = 'block';
+                document.getElementById('fileUploadArea').style.display = 'none';
                 
                 document.getElementById('filesList').innerHTML = '';
                 document.getElementById('dataContent').innerHTML = '';
@@ -3610,7 +3610,7 @@
                 
                 console.log('סקציית העלאת הקבצים נסגרה וכל הנתונים נוקו');
             }
-        });
+        }
 
         // Tab switching functionality
         document.querySelectorAll('.tab-button').forEach(button => {
@@ -5359,9 +5359,6 @@
         }
 
         // פונקציה לסגירת התצוגה
-        function closeDataDisplay() {
-            document.getElementById('dataDisplayContainer').style.display = 'none';
-        }
        
     </script>
 </body>

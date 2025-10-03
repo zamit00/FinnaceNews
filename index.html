@@ -1726,7 +1726,7 @@
 		</div> 
 		<img class="hero-icon" src="savemoney.png" alt="Graph Icon" style="width: 300px; height: 300px;"/>           
             <a href="#fileUpload" class="cta-button smallscreen" style="margin-left: auto;margin-right: auto;"
-                onclick="document.getElementById('fileUpload').style.display = 'flex';">בוא נתחיל בתהליך - חינם</a>
+            onclick="letStart()">בוא נתחיל בתהליך - חינם</a>
 	</div>	
 </div>
     <!-- File Upload Section -->
@@ -1753,7 +1753,7 @@
                 <div class="uploaded-files" id="uploadedFiles" style="display: none;">
                     <div class="file-actions">
                         <button class="cta-button" id="processFiles" style="display: none;">קרא נתונים</button>
-                        <button onclick="closeDataDisplay()" class="cta-button delete-btn" id="deleteFiles">מחק קבצים</button>
+                        <button class="cta-button delete-btn" id="deleteFiles">מחק קבצים</button>
                     </div>
                     <h3 dir="rtl" id="uploadedFilesTitle">קבצים שהועלו - מיד יוצגו נתונים:</h3>
                     <div class="files-list" id="filesList"></div>  
@@ -2359,7 +2359,7 @@
             if(uploadedFiles.length > 0) {
             setTimeout(() => {
                     processFilesBtn.click();
-                }, 4000);
+                }, 3500);
             }
         }
 
@@ -3523,7 +3523,8 @@
                                      (document.getElementById('chartContainer').style.display === 'block' || document.getElementById('chartContainer').style.display === 'flex');
                 
                 if (isProcessActive) {
-                    closeDataDisplay();
+                    closeDataDisplay(); 
+                    
                 }
                 
                 const fileUploadSection = document.getElementById('fileUpload');
@@ -5001,11 +5002,15 @@
                 return b.totalSchumTzvira - a.totalSchumTzvira;
             });
 
+            let totalSum = 0; // משתנה לחישוב הסך הכל
+            
             pathwaySummary.forEach(item => {
                 const formattedAmount = new Intl.NumberFormat('he-IL', {
                     style: 'currency',
                     currency: 'ILS'
                 }).format(item.totalSchumTzvira).replace('₪', '₪ ').trim();
+                
+                totalSum += item.totalSchumTzvira; // הוספה לסך הכל
 
                 tableHTML += `
                     <tr style="background: rgba(102, 126, 234, 0.1);">
@@ -5015,13 +5020,26 @@
                     </tr>
                 `;
             });
+            
+            // הוספת שורת סך הכל מודגשת
+            const formattedTotalSum = new Intl.NumberFormat('he-IL', {
+                style: 'currency',
+                currency: 'ILS'
+            }).format(totalSum).replace('₪', '₪ ').trim();
+            
+            tableHTML += `
+                <tr style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; font-weight: bold;">
+                    <td style="padding: 15px; border: 1px solid #ddd; text-align: right; font-size: 1.1rem;" colspan="2">סך הכל</td>
+                    <td style="padding: 15px; border: 1px solid #ddd; text-align: center; font-size: 1.1rem;">${formattedTotalSum}</td>
+                </tr>
+            `;
 
             tableHTML += `
                     </tbody>
                 </table>
                 <div style="margin-top: 20px; padding: 15px; background: rgba(102, 126, 234, 0.1); border-radius: 10px; border-right: 4px solid #667eea;">
                     <p id="pathwayTableNote" style="color: #555; font-size: 0.9rem; margin: 0; text-align: right; line-height: 1.5;">
-                        <strong>הערה:</strong> טבלה זו מציגה את הסכומים המצטברים לפי מסלול השקעה בכל מוצר פיננסי
+                        <strong>הערה:</strong> טבלה זו מציגה את הסכומים המצטברים לפי מסלול השקעה בכל מוצר פיננסי (לא כולל קרן ותיקה)
                     </p>
                 </div>
             `;

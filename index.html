@@ -720,25 +720,46 @@
                 }
                 
                 /* עיצוב רספונסיבי לטופס ייעוץ פנסיוני */
+                #consultationFormModal {
+                    padding: 10px !important;
+                }
+                
                 #consultationFormModal > div {
                     padding: 20px !important;
                     max-width: 95% !important;
-                    margin: 20px !important;
+                    margin: 10px !important;
+                    width: calc(100% - 20px) !important;
+                    box-sizing: border-box !important;
                 }
                 
                 #consultationFormModal h3 {
                     font-size: 1.4rem !important;
+                    margin-bottom: 15px !important;
+                }
+                
+                #consultationFormModal p {
+                    font-size: 0.9rem !important;
+                    margin-bottom: 20px !important;
                 }
                 
                 #consultationFormModal input,
                 #consultationFormModal textarea {
                     font-size: 0.9rem !important;
-                    padding: 10px !important;
+                    padding: 12px !important;
+                    width: 100% !important;
+                    box-sizing: border-box !important;
                 }
                 
                 #consultationFormModal button {
                     padding: 12px 20px !important;
                     font-size: 0.9rem !important;
+                    width: 100% !important;
+                    margin: 5px 0 !important;
+                }
+                
+                #consultationFormModal .form-buttons {
+                    flex-direction: column !important;
+                    gap: 10px !important;
                 }
                  
                  /* עיצוב רספונסיבי ל-file-upload-section */
@@ -1207,18 +1228,31 @@
                 align-items: center !important;
                 gap: 0.5rem !important;
                 margin-bottom: 2rem !important;
+                width: 100% !important;
+                padding: 0 10px !important;
             }
             
             .tab-button {
-                width: 90% !important;
-                max-width: 300px !important;
-                margin: 0 auto !important;
+                width: 100% !important;
+                max-width: none !important;
+                margin: 0 !important;
                 padding: 15px 20px !important;
                 font-size: 0.9rem !important;
+                box-sizing: border-box !important;
             }
             
             .analysis-content {
                 padding: 0 1rem !important;
+            }
+            
+            .tab-content {
+                padding: 1rem !important;
+                margin: 0 10px !important;
+            }
+            
+            .analysis-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
             }
             
             .analysis-content h3 {
@@ -1634,6 +1668,28 @@
                 font-size: 1.5rem;
             }
             
+            /* שיפורים נוספים לטופס ייעוץ במובייל קטן */
+            #consultationFormModal > div {
+                padding: 15px !important;
+                margin: 5px !important;
+                width: calc(100% - 10px) !important;
+            }
+            
+            #consultationFormModal h3 {
+                font-size: 1.2rem !important;
+            }
+            
+            #consultationFormModal .form-buttons {
+                flex-direction: column !important;
+                gap: 10px !important;
+            }
+            
+            #consultationFormModal button {
+                width: 100% !important;
+                padding: 15px !important;
+                font-size: 0.9rem !important;
+            }
+            
             .file-upload-area {
                 padding: 2rem 1rem;
             }
@@ -1869,7 +1925,7 @@
                     <textarea id="message" rows="4" style="width: 100%; padding: 12px; border: 2px solid #e1e5e9; border-radius: 10px; font-size: 1rem; transition: border-color 0.3s ease; resize: vertical;" placeholder="ספר לנו על הצרכים הפנסיוניים שלך..."></textarea>
                 </div>
                 
-                <div style="display: flex; gap: 15px; justify-content: center;">
+                <div class="form-buttons" style="display: flex; gap: 15px; justify-content: center;">
                     <button type="submit" style="background: linear-gradient(45deg, #667eea, #764ba2); color: white; border: none; padding: 15px 30px; border-radius: 25px; font-size: 1rem; font-weight: bold; cursor: pointer; transition: all 0.3s ease; flex: 1;">
                         📤 שלח בקשה
                     </button>

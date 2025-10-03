@@ -1221,6 +1221,23 @@
                 padding: 0 1rem !important;
             }
             
+            /* תיקון התצוגה במובייל - הכל אחד מעל השני */
+            .analysis-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            
+            .summary-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+            
+            /* תיקון התצוגה של הפרטים האישיים והגרף */
+            div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            
             .analysis-content h3 {
                 font-size: 1.2rem !important;
                 text-align: center !important;
@@ -1638,6 +1655,18 @@
                 padding: 2rem 1rem;
             }
             
+            /* תיקון נוסף למובייל קטן */
+            .analysis-grid,
+            .summary-grid {
+                grid-template-columns: 1fr !important;
+                gap: 0.5rem !important;
+            }
+            
+            div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 15px !important;
+            }
+            
             .upload-icon {
                 font-size: 3rem;
             }
@@ -1723,10 +1752,10 @@
 </div>
                 <div class="uploaded-files" id="uploadedFiles" style="display: none;">
                     <div class="file-actions">
-                        <button class="cta-button" id="processFiles">קרא נתונים</button>
+                        <button class="cta-button" id="processFiles" style="display: none;">קרא נתונים</button>
                         <button onclick="closeDataDisplay()" class="cta-button delete-btn" id="deleteFiles">מחק קבצים</button>
                     </div>
-                    <h3 dir="rtl" id="uploadedFilesTitle">קבצים שהועלו:</h3>
+                    <h3 dir="rtl" id="uploadedFilesTitle">קבצים שהועלו - מיד יוצגו נתונים:</h3>
                     <div class="files-list" id="filesList"></div>  
                 </div>
                 
@@ -2316,6 +2345,7 @@
         selectFilesBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             fileInput.click();
+            
         });
 
          // שמירת הקבצים ב אוסף uploadedFiles
@@ -2326,6 +2356,11 @@
                 }
             });
             displayUploadedFiles();
+            if(uploadedFiles.length > 0) {
+            setTimeout(() => {
+                    processFilesBtn.click();
+                }, 4000);
+            }
         }
 
         function isValidFile(file) {
@@ -3622,6 +3657,7 @@
 
         function performAdvancedAnalysis() {
             if (!dataMislaka) {
+                document.getElementById('advancedAnalysis').style.display = 'none';
                 alert('אין נתונים זמינים לניתוח');
                 return;
             }
